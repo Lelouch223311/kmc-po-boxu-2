@@ -13,7 +13,7 @@ import { RouterView, RouterLink } from 'vue-router';
         <!-- <RouterLink to="/about">O Nas</RouterLink> -->
       </li>
       <li>
-        <RouterLink to="/blogview">Cards</RouterLink>
+        <RouterLink to="/cards">Cards</RouterLink>
       </li>
     </ul>
   </header>
@@ -34,7 +34,7 @@ import { RouterView, RouterLink } from 'vue-router';
         <!-- <RouterLink to="/about">O Nas</RouterLink> -->
       </li>
       <li>
-        <RouterLink to="/blogview">Cards</RouterLink>
+        <RouterLink to="/cards"><span style="color: red;">Cards</span></RouterLink>
       </li>
     </ul>
   </footer>

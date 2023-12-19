@@ -60,6 +60,7 @@
         background-color: red;
         border-radius: 0 10px;
         color:  white;
+        animation: hash5 0.9s 1.5s infinite linear;
     }
     & .price{
         text-decoration: line-through;
@@ -68,8 +69,41 @@
     h4{
         color: red;
         text-shadow: 0px 1px 5px blueviolet;
+        animation: hash4 0.9s 1.5s infinite linear;
     }
 
 }
+/* ------------------------ [ KeyFrames ] ------------------------------- */
+@keyframes hash4 {
+    0%{
+        color: red;
+    }
+    /* 45%{
+        color: blueviolet;
+    }
+    55%{
+        color: red;
+    } */
+    100%{
+        color: darkblue;
+    }
+}
+
+@keyframes hash5 {
+    0%{
+        color: white;
+    }
+    15%{
+        color: aqua;
+    }
+    45%{
+        color: green;
+    }
+    100%{
+        color: white;
+    }
+}
+
+/* ------------------------ [ KeyFrames END ] ------------------------------- */
 
 </style>
