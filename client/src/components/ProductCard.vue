@@ -1,0 +1,75 @@
+<template>
+    <div class="product-card">
+        <div v-if="product.attributes.sale" class="sale">Sale</div>
+        <img :src="baseURL + product.attributes.img.data.attributes.url">
+        <h3>{{ product.attributes.title }}</h3>
+        <p>{{ product.attributes.description }}</p>
+        <!-- <p>{{ product.attributes.price + ' шекелей' }}</p> -->
+        <p :class="{ price:priceRedact }">{{ product.attributes.price + ' шекелей' }}</p>
+        <h4 v-if="product.attributes.sale">{{ product.attributes.sale + ' шекелей' }}</h4>
+    </div>
+</template>
+
+<script>
+
+    export default{
+        name: "ProductCard",
+        props:{
+            product: {},
+        },
+        data(){
+            return{
+                baseURL: 'http://localhost:1337'
+            }
+
+        },
+        computed:{
+            priceRedact(){
+                let sale = this.product.attributes.sale
+                return sale > 0 ? true: false
+            }
+        }
+    }
+
+
+</script>
+
+<style>
+
+.product-card{
+    width: 200px;
+    height: 350px;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    img{
+        width: 100%;
+    }
+    & .sale{
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        background-color: red;
+        border-radius: 0 10px;
+        color:  white;
+    }
+    & .price{
+        text-decoration: line-through;
+        color: red;
+    }
+    h4{
+        color: red;
+        text-shadow: 0px 1px 5px blueviolet;
+    }
+
+}
+
+</style>
