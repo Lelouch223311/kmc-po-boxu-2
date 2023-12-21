@@ -5,6 +5,10 @@
     <div class="products">
         <ProductCard v-for="item in products" :product="item" :key="item.id" />
     </div>
+    <div class="">
+        <h1 v-show="title">Главная</h1>
+    </div>
+    <input type="button" value="Click" @click="titleFunc">
 </template>
 <script>
 import ProductCard from '../components/ProductCard.vue';
@@ -17,9 +21,15 @@ export default {
         ProductCard: ProductCard,
     },
     data() {
-        return {};
+        return {
+            title: false,
+        };
     },
-    methods: {},
+    methods: {
+        titleFunc(){
+            this.title = !this.title;
+        },
+    },
 };
 
 </script>

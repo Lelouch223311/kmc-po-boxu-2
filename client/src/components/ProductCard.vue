@@ -5,7 +5,7 @@
         <h3>{{ product.attributes.title }}</h3>
         <p>{{ product.attributes.description }}</p>
         <!-- <p>{{ product.attributes.price + ' шекелей' }}</p> -->
-        <p :class="{ price:priceRedact }">{{ product.attributes.price + ' шекелей' }}</p>
+        <p :class="{ price:priceRedact }">{{ product.attributes.price + ' шекелей'}}</p>
         <h4 v-if="product.attributes.sale">{{ product.attributes.sale + ' шекелей' }}</h4>
     </div>
 </template>
@@ -19,7 +19,7 @@
         },
         data(){
             return{
-                baseURL: 'http://localhost:1337'
+                baseURL: 'http://localhost:1337',
             }
 
         },
@@ -27,7 +27,7 @@
             priceRedact(){
                 let sale = this.product.attributes.sale
                 return sale > 0 ? true: false
-            }
+            },
         }
     }
 
